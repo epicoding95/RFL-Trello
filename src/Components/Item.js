@@ -15,10 +15,10 @@ const Item = ({ item, index, moveItem, status }) => {
             }
             const dragIndex = item.index;
             const hoverIndex = index;
-            if (dragIndex == hoverIndex) {
+            if (dragIndex === hoverIndex) {
                 return
             }
-            const hoveredRect = ref.currrent.getBoundingClientRect();
+            const hoveredRect = ref.current.getBoundingClientRect();
             const hoverMiddleY = (hoveredRect.bottom - hoveredRect.top) / 2;
             const mousePosition = monitor.getClientOffset();
             const hoverClientY = mousePosition.y - hoveredRect.top;
@@ -35,7 +35,7 @@ const Item = ({ item, index, moveItem, status }) => {
         }
     })
 
-    cosnt[{ isDragging }, drag] = useDrag({
+    const [{ isDragging }, drag] = useDrag({
         item: { type: ITEM_TYPE, ...item, index },
         collect: monitor => ({
             isDragging: monitor.isDragging()
@@ -53,7 +53,15 @@ const Item = ({ item, index, moveItem, status }) => {
                 style={{ opacity: isDragging ? 0 : 1 }}
                 className={'item'}
                 onClick={onOpen}
-            ></div>
+            >
+                <div className={'color-bar'} style={{ backgroundColor: status.color }}></div>
+                <p className={'item-title'}>{item.content}</p>
+                <p className={'item-status'}>{item.icon}</p>
+            </div>
+            <Window
+                item={item}
+                onClose={onClose}
+                show={show} />
         </Fragment>
     );
 };
