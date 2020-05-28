@@ -47,6 +47,8 @@ const Item = ({ item, index, moveItem, status }) => {
     const onOpen = () => setShow(true);
     const onClose = () => setShow(false);
     drag(drop(ref));
+
+
     return (
         <Fragment>
             <div ref={ref}

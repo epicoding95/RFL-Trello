@@ -7,13 +7,16 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import Homepage from './Components/Homepage';
 import Input from './Components/Input';
 import { DataContext } from './Context/DataContext';
+import DeleteDone from './Components/DeleteDone'
 function App() {
   return (
     <DndProvider backend={HTML5Backend}>
       <DataContext>
         <Homepage />
         <Input />
+        <DeleteDone />
         <Header />
+
       </DataContext>
     </DndProvider>
   );
