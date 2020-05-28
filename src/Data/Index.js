@@ -1,10 +1,4 @@
-const data = [{
-    id: 1,
-    icon: "⭕️",
-    status: "open",
-    title: "Human Interest Form",
-    content: "Fill out human interest distribution form"
-}];
+const data = [];
 
 const statuses = [{
     status: "open",
