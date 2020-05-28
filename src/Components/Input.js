@@ -38,7 +38,7 @@ const Input = () => {
                     }
 
                 }} />
-            <button onClick={pushData} className='inputFieldButton'> X</button>
+            <button onClick={pushData} className='inputFieldButton'>Add Task</button>
         </div>
     );
 };
