@@ -14,6 +14,7 @@ const Homepage = () => {
             const newItems = prevState
                 .filter(i => i.id !== item.id)
                 .concat({ ...item, status, icon: mapping.icon })
+            localStorage.setItem('allData', JSON.stringify(newItems))
             return [...newItems]
         })
     }
@@ -23,11 +24,12 @@ const Homepage = () => {
         setUserInputContext(prevState => {
             const newItems = prevState.filter((i, index) => index !== dragIndex);
             newItems.splice(hoverIndex, 0, item)
+            localStorage.setItem('allData', JSON.stringify(newItems))
             return [...newItems];
         })
     };
 
-
+    const dataFromStorage = JSON.parse(localStorage.getItem('allData'))
     return (
         <div className={'row'}
         >
@@ -37,8 +39,8 @@ const Homepage = () => {
                         <h2 className={'col-header'}>{s.status.toUpperCase()}</h2>
                         <DropWrapper onDrop={onDrop} status={s.status}>
                             <Col>
-                                {userInputContext.filter(i => i.status === s.status)
-                                    .map((i, index) => <Item key={i.id} item={i} index={index} moveItem={moveItem} status={s} />)}
+                                {dataFromStorage.filter((i, index) => i.status === s.status)
+                                    .map((i, index) => <Item key={`${i}_${index}`} item={i} index={index} moveItem={moveItem} status={s} />)}
                             </Col>
                         </DropWrapper>
                     </div>

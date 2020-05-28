@@ -15,9 +15,11 @@ const Input = () => {
             content: userInput
         }
         setUserInputContext(prevContext => {
-            return [...prevContext, objectToPush]
+            const allData = [...prevContext, objectToPush]
+            localStorage.setItem('allData', JSON.stringify(allData))
+            return allData
         })
-        console.log(userInputContext)
+
     }
     /*{
      id: 4,
