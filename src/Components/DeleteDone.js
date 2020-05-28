@@ -13,8 +13,8 @@ const DeleteDone = () => {
     }
 
     return (
-        <div>
-            <button onClick={deleteDoneItems} className='DeleteButton'> im a button</button>
+        <div className='deleteButtonContainer'>
+            <button onClick={deleteDoneItems} className='deleteButton'>Delete done tasks</button>
         </div>
     );
 };

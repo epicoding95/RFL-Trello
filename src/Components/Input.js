@@ -20,12 +20,24 @@ const Input = () => {
             localStorage.setItem('allData', JSON.stringify(allData))
             return allData
         })
-
+        setUserInput('')
     }
+
+
 
     return (
         <div className='inputContainer'>
-            <input className='inputField' placeholder='add todo..' value={userInput} onChange={(e) => setUserInput(e.target.value)} />
+            <input
+                className='inputField'
+                placeholder='add todo..'
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyPress={(e) => {
+                    if (e.key === 'Enter') {
+                        pushData()
+                    }
+
+                }} />
             <button onClick={pushData} className='inputFieldButton'> X</button>
         </div>
     );

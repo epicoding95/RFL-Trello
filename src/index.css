@@ -74,6 +74,7 @@ select {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top:50px;
 }
 
 .item {
@@ -128,12 +129,7 @@ select {
     margin-top: 0;
 }
 
-.col {
-    min-height: 300px;
-    max-width: 300px;
-    width: 300px;
-  
-}
+
 
 .highlight-region {
     background-color: yellow;
@@ -188,30 +184,47 @@ select {
 }
 
 .inputContainer{
- display: flex;
-    flex-direction: row;
-    margin: 20px;
+    display: flex;
+  justify-content: center;
+    width: 92.5%;
+    margin-right: 2.5%;
+    margin-top: 20px;
+    margin-left: 15px;
     padding: 5px;
     background-color: var(--background-color);
     border-radius: 5px;
-max-width: 330px;
-   
-   
+    width: 95.5%;
+    min-width: 230px;
+    position: fixed;
+    top: -10px;
+ 
 }
 .inputField{
-     width: 300px;
-     height: 32px;
-    left: 18%;
-    bottom: -30px;
-    border-radius: 5px;
+   width: 100%;
 }
 .inputFieldButton{
-     width: 42px;
-     height: 42px;
+    width: 42px;
+    height: 42px;
     left: 35%;
     bottom: -30px;
     border-radius: 5px;
     background-color: blue;
     color: white;
     border: none;
+}
+.deleteButtonContainer{
+    display: flex;
+    justify-content: center;
+  
+}
+.deleteButton{
+    position: fixed;
+    right: 0px;
+    background-color: var(--background-color);
+    width: 95.5%;
+    margin-right: 2.5%;
+    border-radius: 5px;
+    height: 32px;
+    color: black;
+    line-height: 20px;
 }
