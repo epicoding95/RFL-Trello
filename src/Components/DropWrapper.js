@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useDrop } from 'react-dnd';
 import ITEM_TYPE from '../Data/Types'
 import { statuses } from '../Data/Index'
@@ -23,6 +23,8 @@ const DropWrapper = ({ onDrop, children, status }) => {
     return (
         <div ref={drop} className={'drop-wrapper'}>
             {React.cloneElement(children, { isOver })}
+
+
         </div>
     );
 };

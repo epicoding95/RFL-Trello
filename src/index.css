@@ -132,6 +132,7 @@ select {
     min-height: 300px;
     max-width: 300px;
     width: 300px;
+  
 }
 
 .highlight-region {
@@ -144,7 +145,7 @@ select {
     color: white;
     font-size: 30px;
     flex: 1 100%;
-    margin-top: 0;
+    margin-top: 40px;
     text-align: center;
 }
 
@@ -184,4 +185,33 @@ select {
 
 .close-btn:hover {
     background-color: #DCDCDC;
+}
+
+.inputContainer{
+ display: flex;
+    flex-direction: row;
+    margin: 20px;
+    padding: 5px;
+    background-color: var(--background-color);
+    border-radius: 5px;
+max-width: 330px;
+   
+   
+}
+.inputField{
+     width: 300px;
+     height: 32px;
+    left: 18%;
+    bottom: -30px;
+    border-radius: 5px;
+}
+.inputFieldButton{
+     width: 42px;
+     height: 42px;
+    left: 35%;
+    bottom: -30px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    border: none;
 }

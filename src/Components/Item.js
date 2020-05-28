@@ -2,7 +2,7 @@ import React, { Fragment, useState, useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import Window from './Window';
 import ITEM_TYPE from '../Data/Types';
-import { freemem } from 'os';
+
 
 const Item = ({ item, index, moveItem, status }) => {
     const ref = useRef(null);
@@ -58,6 +58,7 @@ const Item = ({ item, index, moveItem, status }) => {
                 <p className={'item-title'}>{item.content}</p>
                 <p className={'item-status'}>{item.icon}</p>
             </div>
+
             <Window
                 item={item}
                 onClose={onClose}
